@@ -1,4 +1,4 @@
-FROM ruby:3.1.1
+FROM ruby:3.0.1
 RUN apt-get update -qq \
   && apt-get install -y nodejs postgresql-client npm \
   && rm -rf /var/lib/apt/lists/* \
