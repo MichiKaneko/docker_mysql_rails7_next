@@ -20,6 +20,18 @@ bundle install
 ```
 
 ## 4. データベースを作成する
+defaultのhostを「localhost」から「db」に修正
+```backend/config/datebase.yml
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password: password
+  host: db
+```
+
+databaseを作成する
 ```bash
 docker-compose run --rm backend rails db:create
 ```
